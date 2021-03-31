@@ -28,3 +28,13 @@
     </g>
   </svg>
 </template>
+<script>
+export default {
+  props: {
+    err: {
+      type: Boolean,
+      default: false,
+    },
+  },
+};
+</script>

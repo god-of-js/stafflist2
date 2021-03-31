@@ -14,7 +14,7 @@
         </button>
       </article>
     </section>
-    <modal />
+    <modal v-if="isModalActive" />
   </main>
 </template>
 
@@ -26,6 +26,16 @@ export default {
   components: {
     Logo,
     Modal,
+  },
+  computed: {
+    isModalActive() {
+      return this.$store.state.modal;
+    },
+  },
+  methods: {
+    openModal() {
+      this.$store.commit("setModalState", true);
+    },
   },
 };
 </script>

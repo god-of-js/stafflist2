@@ -3,7 +3,7 @@
     :class="[err ? 'error' : '', 'input-container']"
     :id="elementType === 'textarea' ? 'input-cont-grow' : ''"
   >
-    <component :is="img" class="margin" v-if="img" />
+    <component :is="img" :err="err" class="margin" v-if="img" />
     <input
       :type="type"
       placeholder="."
@@ -28,12 +28,13 @@
       </option>
     </select>
     <label for="" id="label" :style="checkFocusedSelect + checkTextArea">
-      <img src="" alt="" v-if="elementType === 'checkbox'" />
+      <info-icon v-if="elementType === 'textarea'"></info-icon>
       {{ placeholder }}</label
     >
     <label for="input" v-if="type === 'checkbox'" class="check-box-label"
       >All</label
     >
+    <img src="../../assets/img/icon-attention.svg" alt="" v-if="err" />
   </fieldset>
 </template>
 
@@ -41,6 +42,7 @@
 import SelectImg from "../images/SelectImg";
 import DateImg from "../images/DateImg";
 import EmailImg from "../images/EmailImg";
+import InfoIcon from "../images/InfoImg";
 export default {
   name: "CustomInputContainer",
   props: {
@@ -85,6 +87,7 @@ export default {
     SelectImg,
     DateImg,
     EmailImg,
+    InfoIcon,
   },
 };
 </script>
@@ -119,6 +122,11 @@ export default {
     outline: none;
     border: transparent;
     background: $white;
+  }
+  &.error {
+    #label {
+      color: red;
+    }
   }
   #label {
     padding: 15px 35px;

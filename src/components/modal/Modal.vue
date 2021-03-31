@@ -35,6 +35,11 @@ export default {
       return "VacancyForm";
     },
   },
+  methods: {
+    closeModal() {
+      this.$store.commit("setModalState", false);
+    },
+  },
 };
 </script>
 
@@ -43,7 +48,7 @@ export default {
 @import "@/assets/styles/sizes.scss";
 .modal-card {
   background: $white;
-  width: 30%;
+  width: 25%;
   margin: auto;
   border-radius: 5px;
   header {

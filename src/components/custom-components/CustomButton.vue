@@ -33,7 +33,7 @@ export default {
 @import "@/assets/styles/colors.scss";
 
 .default-button {
-  width: 100%;
+  width: 80%;
   padding: 10px;
   height: 56px;
   outline: none;
@@ -44,6 +44,7 @@ export default {
   border: transparent;
   font-size: 0.9em;
   cursor: pointer;
+  margin: auto;
   &:active {
     transform: scale(1.04, 1.03);
   }
@@ -75,5 +76,6 @@ export default {
   outline: none;
   cursor: pointer;
   float: left;
+  color: rgb(108, 108, 197);
 }
 </style>
