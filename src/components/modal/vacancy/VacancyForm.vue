@@ -102,7 +102,6 @@ export default {
   },
   methods: {
     submit() {
-      console.log(this.data);
       axios.post("https://someurl/post-request", this.data).then(() => {});
     },
     placeFile(file) {
