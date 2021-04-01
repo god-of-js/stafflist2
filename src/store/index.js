@@ -9,6 +9,7 @@ export default new Vuex.Store({
   },
   mutations: {
     setModalState(state, param) {
+      console.log(param);
       state.isModalActive = param;
     },
   },

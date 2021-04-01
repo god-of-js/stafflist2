@@ -1,9 +1,23 @@
 <template>
   <div id="app">
     <router-view />
+
+    <modal v-if="isModalActive" />
   </div>
 </template>
-
+<script>
+import Modal from "./components/modal/Modal.vue";
+export default {
+  components: {
+    Modal,
+  },
+  computed: {
+    isModalActive() {
+      return this.$store.state.isModalActive;
+    },
+  },
+};
+</script>
 <style lang="scss">
 @font-face {
   font-family: stafflist-font;

@@ -14,23 +14,15 @@
         </button>
       </article>
     </section>
-    <modal v-if="isModalActive" />
   </main>
 </template>
 
 <script>
 import Logo from "@/components/images/Logo";
-import Modal from "@/components/modal/Modal.vue";
 export default {
   name: "Home",
   components: {
     Logo,
-    Modal,
-  },
-  computed: {
-    isModalActive() {
-      return this.$store.state.modal;
-    },
   },
   methods: {
     openModal() {
